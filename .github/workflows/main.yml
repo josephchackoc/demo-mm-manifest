@@ -1,0 +1,31 @@
+name: android-Build
+
+# Trigger the workflow on push or pull request events for the main branch
+on:
+ workflow_call:
+   inputs:
+     androidVersion:
+       default: "latest"
+       type: string
+
+jobs:
+  android-build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository code onto the runner
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      # Step 2: Print a simple greeting message
+      - name: Say Hello
+        run: echo "Hello World! The workflow is successfully triggered."
+
+      # Step 3: Run a multi-line script to output runner information
+      - name: List files and environment info
+        run: |
+          echo "The job is running on a server hosted by GitHub!"
+          echo "Current workspace directory: $GITHUB_WORKSPACE"
+          echo "Listing files in the repository:"
+          ls -la
