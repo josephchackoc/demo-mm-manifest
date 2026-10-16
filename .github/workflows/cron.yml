@@ -1,5 +1,7 @@
 name: Cron
 
+permissions:
+  actions: write
 on:
   workflow_dispatch:
 
@@ -12,5 +14,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "Hello"
-          gh workflow run verification.yml --ref MTtestBranch -f message="abc" --repo josephchackoc/demo-mm-manifest
+          gh workflow run verification.yml --ref MTtestBranch -f message="abc" --repo josephchackoc/demo-mm-manifest 
+          
           
