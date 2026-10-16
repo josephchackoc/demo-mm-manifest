@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: some name
+        env:
+          GH_TOEKN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "Hello"
           gh workflow run verification.yml --ref MTtestBranch -f message="abc"
