@@ -3,6 +3,9 @@ name: Verification
 # Trigger the workflow on push or pull request events for the main branch
 on:
   workflow_dispatch:
+    inputs:
+      message:
+        default: "value 1"
     
   pull_request:
     branches: [ "main" ]
@@ -13,6 +16,6 @@ jobs:
     steps:
       - name: test
         run: |
-          echo "on MTTest branch"
+          echo "on MTTest branch ${{ inputs.message }}"
       
    
