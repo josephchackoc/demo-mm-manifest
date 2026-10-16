@@ -8,11 +8,11 @@ on:
     branches: [ "main" ]
 
 jobs:
-  qnx:
-    # The type of runner that the job will run on
-    uses: ./.github/workflows/qnx.yml
-  android:
-    # The type of runner that the job will run on
-    uses: ./.github/workflows/android.yml
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: |
+          echo "on MTTest branch"
       
    
