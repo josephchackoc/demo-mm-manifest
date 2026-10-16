@@ -1,0 +1,14 @@
+name: Cron
+
+on:
+  workflow_dispatch:
+
+jobs:
+  triggerWorkflwow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: some name
+        run: |
+          echo "Hello"
+          gh workflow run verification.yml --ref MTtestBranch -f message="abc"
+          
